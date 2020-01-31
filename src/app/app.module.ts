@@ -12,13 +12,13 @@ import {environment} from '../environments/environment';
     AppComponent,
     TodoComponent
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    TodoComponent
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
