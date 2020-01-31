@@ -1,1 +1,24 @@
-<p>todo works!</p>
+<div class="jumbotron">
+    <h4 class="text-center">To do list App</h4>
+</div>
+
+<div class="input-group">
+    <input type="text" class="form-control" #activityTitle>
+    <div class="input-group-addon hover-cursor" (click)="onAdd(activityTitle)">
+        <i class="fa fa-plus-circle fa-2x"></i>
+    </div>
+</div>
+
+<div>
+<div class="list-group">
+    <div class="list-group-activity" *ngFor="let activity of toDoArray">
+<span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck(activity.$key,activity.isChecked)">
+    <i class="fa fa-lg" [ngClass]="activity.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+</span>
+{{activity.title}}
+<span class="hover-cursor text-danger pull-right">
+    <i class="fa fa-trash-o fa-lg" (click)="onDelete(activity.$key)"></i>
+</span>
+    </div>
+</div>
+</div>
