@@ -30,9 +30,10 @@ export class TodoComponent implements OnInit {
       })
     });
   }
-onAdd(activityTitle: { value: string; }){
-  this.toDoService.addActivity(activityTitle.value);
+onAdd(activityTitle: { value: string; },_date: any){
+  this.toDoService.addActivity(activityTitle.value,Date.value);
   activityTitle.value = null;
+  Date.value = null;
 }
 alterMark($key: string,isMarked: any){
   this.toDoService.markedOrUnmarkedActivity($key,!isMarked);

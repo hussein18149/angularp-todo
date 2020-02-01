@@ -14,9 +14,10 @@ export class TodoService {
     return this.toDolist;
   }
 
-  addActivity(activity: string){
+  addActivity(activity: string,date: string){
     this.toDolist.push({
       activity: activity,
+      date: Date,
       isMarked: false
     });
   }

@@ -13,11 +13,13 @@
 <div class="list-group">
     <div class="list-group-activity" *ngFor="let activity of toDoArray">
 <span class="hover-cursor" [class.text-success]="activity.isMarkedd" (click)="alterMarked(activity.$key,activity.isMarked)">
-    <i class="fa fa-lg" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'"></i>
+      <label class="custom-control-label" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'"></label>
+
+    <!-- <i class="fa fa-lg" ></i> -->
 </span>
-{{activity.title}}
+{{activity.activity}}
 <span class="hover-cursor text-danger pull-right">
-    <i class="fa fa-trash-o fa-lg" (click)="onDelete(activity.$key)"></i>
+        <button type="button" class="btn btn-light" (click)="onDelete(activity.$key)">DELE</button>
 </span>
     </div>
 </div>
