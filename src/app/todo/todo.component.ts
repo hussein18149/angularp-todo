@@ -21,19 +21,23 @@ export class TodoComponent implements OnInit {
         var x = element.payload.toJSON();
         x["$key"] = element.key;
         this.toDoArray.push(x);
+        
       })
 
-      //sort array isChecked false
+      
       this.toDoArray.sort((a,b) => {
-        return a.isChecked - b.isChecked
+        return a.isMarked - b.isMarked
       })
     });
   }
-onAdd(activityTitle){
+onAdd(activityTitle: { value: string; }){
   this.toDoService.addActivity(activityTitle.value);
   activityTitle.value = null;
 }
-alterCheck($key: string,isChecked){
-  this.toDoService.checkOrUncheckedActivity($key,!isChecked);
+alterMark($key: string,isMarked: any){
+  this.toDoService.markedOrUnmarkedActivity($key,!isMarked);
+  }
+onDelete($key : string){
+  this.toDoService.removeActivity($key);
 }
 }

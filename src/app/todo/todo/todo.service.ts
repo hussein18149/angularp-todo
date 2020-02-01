@@ -17,11 +17,11 @@ export class TodoService {
   addActivity(activity: string){
     this.toDolist.push({
       activity: activity,
-      isChecked: false
+      isMarked: false
     });
   }
-  checkOrUncheckedActivity($key: string, flag: boolean){
-    this.toDolist.update($key,{isChecked: flag});
+  markedOrUnmarkedActivity($key: string, flag: boolean){
+    this.toDolist.update($key,{isMaarked: flag});
   }
   removeActivity($key: string){
     this.toDolist.remove($key);
