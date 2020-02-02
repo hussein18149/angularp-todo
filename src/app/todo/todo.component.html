@@ -3,7 +3,7 @@
 </div>
 
 <div class="input-group">
-    <input type="text" class="form-control" #activityTitle>
+    <input type="text" placeholder="Add your activity....."  class="form-control" #activityTitle>
     <div class="input-group-addon hover-cursor" (click)="onAdd(activityTitle)">
         <button type="button" class="btn btn-light">SEND</button>
     </div>
@@ -15,7 +15,7 @@
 
 
             <div [class.text-success]="activity.isMarked" (click)="alterMarked(activity.$key,activity.isMarked)">
-                    <input type="radio" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'" value="activity">{{activity.activity}}<br>
+                    <input  type="radio" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'" value="activity"><i appStrikethrough>{{activity.activity}} </i><br>
                     
                         <strong>
                         </strong>

@@ -7,14 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {environment} from '../environments/environment';
 import { DateCountPipe } from './date-count.pipe';
-import { HighlightDirective } from './highlight.directive';
+import { StrikethroughDirective } from './strikethrough.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
     DateCountPipe,
-    HighlightDirective
+    StrikethroughDirective
   ],
 
   imports: [
