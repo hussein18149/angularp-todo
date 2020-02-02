@@ -11,6 +11,7 @@ import { element } from 'protractor';
 })
 export class TodoComponent implements OnInit {
   toDoArray:any[];
+  date: Date;
 
   constructor(private toDoService: TodoService) { }
 
@@ -30,7 +31,11 @@ export class TodoComponent implements OnInit {
         return a.isMarked - b.isMarked
       })
     });
+    this.date = new Date();
+  this.date.setDate( this.date.getDate() );
   }
+
+  
 onAdd(activityTitle: { value: string;}){
   this.toDoService.addActivity(activityTitle.value);
   activityTitle.value = null;

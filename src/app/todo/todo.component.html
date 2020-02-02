@@ -9,28 +9,29 @@
     </div>
 </div>
 
-<div>
+<div class="card">
 <div class="list-group">
     <div class="list-group-activity" *ngFor="let activity of toDoArray">
 
 
-            <div class="custom-control custom-radio" class="hover-cursor" [class.text-success]="activity.isMarked" (click)="alterMarked(activity.$key,activity.isMarked)">
-                    <input type="radio" class="custom-control-input"  name="defaultExampleRadios">
-                    <label class="custom-control-label" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'">{{activity.activity}}
-                        </label>
+            <div [class.text-success]="activity.isMarked" (click)="alterMarked(activity.$key,activity.isMarked)">
+                    <input type="radio" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'" value="activity">{{activity.activity}}<br>
+                    
+                        <strong>
+                        </strong>
+                        <br>
+                        <h6>{{ date | date }}</h6>
                   </div>
 
 
 
 
-<!-- <span class="hover-cursor" [class.text-success]="activity.isMarked" (click)="alterMarked(activity.$key,activity.isMarked)"> -->
-      <!-- <button type='radio' class="radio" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'"></button> -->
 
-    <!-- <i class="fa fa-lg" ></i> -->
-<!-- </span> -->
+
 <span class="hover-cursor text-danger pull-right">
-        <button type="button" class="btn btn-light" (click)="onDelete(activity.$key)">DELE</button>
+            <button type="button" style="width: 100%;" class="btn btn-light" (click)="onDelete(activity.$key)">Add Trash</button>
 </span>
     </div>
 </div>
 </div>
+
