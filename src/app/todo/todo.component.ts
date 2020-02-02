@@ -1,4 +1,3 @@
-import { DateCountPipe } from './../date-count.pipe';
 import { TodoService } from './todo/todo.service';
 import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
