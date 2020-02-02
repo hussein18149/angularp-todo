@@ -1,3 +1,4 @@
+import { DateCountPipe } from './../date-count.pipe';
 import { TodoService } from './todo/todo.service';
 import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
@@ -30,12 +31,11 @@ export class TodoComponent implements OnInit {
       })
     });
   }
-onAdd(activityTitle: { value: string; },_date: any){
-  this.toDoService.addActivity(activityTitle.value,Date.value);
+onAdd(activityTitle: { value: string;}){
+  this.toDoService.addActivity(activityTitle.value);
   activityTitle.value = null;
-  Date.value = null;
 }
-alterMark($key: string,isMarked: any){
+alterMarked($key: string,isMarked: any){
   this.toDoService.markedOrUnmarkedActivity($key,!isMarked);
   }
 onDelete($key : string){

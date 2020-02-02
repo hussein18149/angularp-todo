@@ -12,12 +12,22 @@
 <div>
 <div class="list-group">
     <div class="list-group-activity" *ngFor="let activity of toDoArray">
-<span class="hover-cursor" [class.text-success]="activity.isMarkedd" (click)="alterMarked(activity.$key,activity.isMarked)">
-      <label class="custom-control-label" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'"></label>
+
+
+            <div class="custom-control custom-radio" class="hover-cursor" [class.text-success]="activity.isMarked" (click)="alterMarked(activity.$key,activity.isMarked)">
+                    <input type="radio" class="custom-control-input"  name="defaultExampleRadios">
+                    <label class="custom-control-label" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'">{{activity.activity}}
+                        </label>
+                  </div>
+
+
+
+
+<!-- <span class="hover-cursor" [class.text-success]="activity.isMarked" (click)="alterMarked(activity.$key,activity.isMarked)"> -->
+      <!-- <button type='radio' class="radio" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'"></button> -->
 
     <!-- <i class="fa fa-lg" ></i> -->
-</span>
-{{activity.activity}}
+<!-- </span> -->
 <span class="hover-cursor text-danger pull-right">
         <button type="button" class="btn btn-light" (click)="onDelete(activity.$key)">DELE</button>
 </span>
