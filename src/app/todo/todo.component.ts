@@ -33,8 +33,6 @@ export class TodoComponent implements OnInit {
     this.date = new Date();
   this.date.setDate( this.date.getDate() );
   }
-
-  
 onAdd(activityTitle: { value: string;}){
   this.toDoService.addActivity(activityTitle.value);
   activityTitle.value = null;
