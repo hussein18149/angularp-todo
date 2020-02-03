@@ -15,19 +15,11 @@
 
 
             <div [class.text-success]="activity.isMarked" (click)="alterMarked(activity.$key,activity.isMarked)">
-                    <input  type="radio" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'" value="activity"><i appStrikethrough>{{activity.activity}} </i><br>
-                    
-                        <strong>
-                        </strong>
+                    <input  type="radio" [ngClass]="activity.isMarked?'fa-check-circle-o':'fa-circle-thin'" value="activity"><strong><i appStrikethrough>{{activity.activity}} </i><br>
+                    </strong>
                         <br>
                         <h6>{{ date | date }}</h6>
                   </div>
-
-
-
-
-
-
 <span class="hover-cursor text-danger pull-right">
             <button type="button" style="width: 100%;" class="btn btn-light" (click)="onDelete(activity.$key)">Add Trash</button>
 </span>
